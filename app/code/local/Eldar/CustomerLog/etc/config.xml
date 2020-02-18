@@ -1,0 +1,7 @@
+<config>
+    <modules>
+        <Eldar_CustomerLog>
+            <version>0.1.0</version>
+        </Eldar_CustomerLog>
+    </modules>
+</config>

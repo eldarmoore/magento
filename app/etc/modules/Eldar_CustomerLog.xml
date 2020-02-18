@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Eldar_CustomerLog>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Eldar_CustomerLog>
+    </modules>
+</config>
