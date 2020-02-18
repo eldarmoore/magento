@@ -1,20 +1,34 @@
+<?xml version="1.0"?>
 <config>
     <modules>
         <Eldar_CustomerLog>
-            <version>0.1.0</version>
+            <version>0.0.1</version>
         </Eldar_CustomerLog>
     </modules>
+
     <global>
-        <events>
-            <controller_front_init_routers>
-                <observers>
-                    <Eldar_customerlogs_model_observer>
-                        <type>singleton</type>
-                        <class>Eldar_CustomerLog_Model_Observer</class>
-                        <method>checkForConfigRequest</method>
-                    </Eldar_customerlogs_model_observer>
-                </observers>
-            </controller_front_init_routers>
-        </events>
+        <resources>
+            <customerlog_setup>
+                <setup>
+                    <module>Eldar_CustomerLog</module>
+                </setup>
+            </customerlog_setup>
+        </resources>
+
+        <models>
+            <customerlog>
+                <class>Eldar_CustomerLog_Model</class>
+                <resourceModel>customerlog_resource</resourceModel>
+            </customerlog>
+
+            <customerlog_resource>
+                <class>Eldar_CustomerLog_Model_Resource</class>
+                <entities>
+                    <customer_log>
+                        <table>customer_log</table>
+                    </customer_log>
+                </entities>
+            </customerlog_resource>
+        </models>
     </global>
 </config>
