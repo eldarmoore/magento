@@ -24,9 +24,9 @@
             <customerlog_resource>
                 <class>Eldar_CustomerLog_Model_Resource</class>
                 <entities>
-                    <customer_log>
+                    <log_table>
                         <table>customer_log</table>
-                    </customer_log>
+                    </log_table>
                 </entities>
             </customerlog_resource>
         </models>
