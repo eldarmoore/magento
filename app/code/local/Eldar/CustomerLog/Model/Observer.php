@@ -8,14 +8,15 @@ class Eldar_CustomerLog_Model_Observer
         $customer = $observer->getCustomer();
         $email = $customer->getEmail();
 
-        Mage::log($email . '() Hello!');
+        Mage::log($email . '() Hello!'); // Test Log, getting there
 
         $customer_log = array(
             'email'         => $email,
-            'login_counter' => '1',
+            'login_counter' => 1,
+            'last_visit_at' => now(),
         );
 
-        $model = Mage::getModel('eldar_customerlog/log')->addData($customer_log);
+        $model = Mage::getModel('eldar_customerlog/customer_log')->addData($customer_log);
 
         try {
             $model->save(); //save data
@@ -24,7 +25,5 @@ class Eldar_CustomerLog_Model_Observer
         } catch (Exception $e) {
             Mage::log($e->getMessage());
         }
-
-
     }
 }

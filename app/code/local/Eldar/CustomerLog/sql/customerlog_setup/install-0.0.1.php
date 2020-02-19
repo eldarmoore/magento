@@ -19,6 +19,9 @@ try {
             'nullable' => false,
             'default'  => '0',
         ), 'Login Counter')
+        ->addColumn('last_visit_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
+            'nullable'  => false,
+        ), 'Last Visit Time')
         ->setComment('Customer Log');
     Mage::log("Table successfully created." );
 } catch (Exception $e) {
