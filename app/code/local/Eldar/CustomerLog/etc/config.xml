@@ -16,10 +16,10 @@
         </resources>
 
         <models>
-            <customerlog>
+            <eldar_customerlog>
                 <class>Eldar_CustomerLog_Model</class>
                 <resourceModel>customerlog_resource</resourceModel>
-            </customerlog>
+            </eldar_customerlog>
 
             <customerlog_resource>
                 <class>Eldar_CustomerLog_Model_Resource</class>
@@ -31,4 +31,18 @@
             </customerlog_resource>
         </models>
     </global>
+
+    <frontend>
+        <events>
+            <customer_login>
+                <observers>
+                    <eldar_customerlog_customer_login>
+                        <type>model</type>
+                        <class>eldar_customerlog/observer</class>
+                        <method>customerLogin</method>
+                    </eldar_customerlog_customer_login>
+                </observers>
+            </customer_login>
+        </events>
+    </frontend>
 </config>
